@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- CSS (load bootstrap) -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./dist/sidemenu.css">
+
+    <style>
+        .navbar {
+            border-radius: 0;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="./dist/sidemenu.jq.js"></script>
+
+</head>
+
+
+<body>
+
+
+<!-- side menu -->
+<div class="sidemenu sidemenu-inverse ">
+
+    <div>
+
+        <ul class="sidemenu-header">
+            <li>
+          <span id="sideMenuBtn" class="glyphicon glyphicon-align-justify pull-default" role="button"
+                ng-click="vm.toggleSideMenu()"></span>
+
+                <a href="/">
+                    <span class="hide-on-small-menu">SUPER APP</span>
+                </a>
+            </li>
+
+        </ul>
+
+        <div class="sidemenu-body">
+
+            <ul class="smenu">
+                <li>
+                    <a href="/mapp/app1">
+                        <span class="glyphicon glyphicon-dashboard"></span>
+                        <span class="hide-on-small-menu">Dasboard</span>
+                    </a>
+                </li>
+            </ul>
+
+
+            <ul class="smenu">
+                <li ng-repeat="microapp in vm.microapps" ng-class="{'active': vm.isMenuActive(microapp)}">
+                    <a href="/mapp/app1">
+                        <span class="glyphicon glyphicon-heart"></span>
+                        <span class="hide-on-small-menu"> app1 </span>
+                    </a>
+                </li>
+
+                <li class="divider"></li>
+
+                <li>
+                    <a href="/api/auth/signout" target="_self">
+
+                        <span class="glyphicon glyphicon-log-out"></span>
+                        <span class="hide-on-small-menu"> SignOut </span>
+
+                    </a>
+                </li>
+
+            </ul>
+
+            <ul class="smenu">
+
+                <li>
+
+                    <a href="#menu1" role="button" data-toggle="collapse">
+
+                        <span class="glyphicon glyphicon-dashboard"></span>
+                        <span class="hide-on-small-menu">Menu1</span>
+
+                        <span class="caret-icon glyphicon glyphicon-chevron-down hide-on-small-menu"></span>
+
+                    </a>
+
+                    <ul id="menu1" class="collapse">
+
+                        <li><a role="button">Menu1 Home</a></li>
+                        <li><a role="button">Menu1 SubMenu1</a></li>
+                        <li><a role="button">Menu1 SubMenu2</a></li>
+                        <li><a role="button">Menu1 SubMenu3</a></li>
+                    </ul>
+
+                </li>
+
+            </ul>
+
+
+            <ul class="smenu sidemenu-footer">
+
+                <li>
+
+                    <a href="#userMenu" role="button" data-toggle="collapse">
+
+                        <img src="./assets/img/default.png" alt="{{vm.authentication.user.displayName}}"
+                             class="header-profile-image-mini"/>
+                        <span class="hide-on-small-menu">Jagadeesh Palaniappan</span>
+
+                    </a>
+
+                    <ul id="userMenu" class="collapse">
+
+                        <li><a role="button">User Settings</a></li>
+                        <li><a role="button">Account</a></li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="/api/auth/signout" target="_self">
+
+                                <span class="glyphicon glyphicon-log-out"></span>
+                                <span class="hide-on-small-menu"> SignOut </span>
+
+                            </a>
+                        </li>
+                    </ul>
+
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- / side menu -->
+
+
+<!-- Micro App -->
+
+<div id="microApp">
+    <div class="main-content">
+        <div class="container-fluid">
+
+            (NO -NG Layout) -- Mapp Layout
+
+            <h2>Simple Collapsible</h2>
+            <a href="#demo" class="btn btn-info" data-toggle="collapse">Simple collapsible</a>
+
+            <div id="demo" class="collapse">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+
+</html>
